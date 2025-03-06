@@ -3,8 +3,10 @@ name: Publish Docker image
 on:
   push:
     tags:
-      - 'v*'
-      
+      - "v*"
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
