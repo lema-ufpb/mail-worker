@@ -1,0 +1,28 @@
+services:
+  mail-worker:
+    image: l3m4ufp/mail-worker:latest
+    container_name: mail-worker
+    depends_on:
+      - rabbitmq
+    ports:
+      - 5000:5000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+    networks:
+      - production
+  rabbitmq:
+    image: rabbitmq:4.0.7-management-alpine
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: always
+    networks:
+      - production
+networks:
+  production:
