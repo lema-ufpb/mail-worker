@@ -16,13 +16,13 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN groupadd -g 1000 app_group && \
-    useradd -rm -d /home/default-user -s /bin/bash -g app_group -u 1000 default-user
+RUN groupadd -g 1000 worker_group && \
+    useradd -rm -d /home/default-user -s /bin/bash -g worker_group -u 1000 default-user
 
-WORKDIR /app
-COPY --chown=default-user:app_group ./src /app/src
-COPY --chown=default-user:app_group ./app.py /app
-COPY --chown=default-user:app_group ./requirements.txt /app
+WORKDIR /worker
+COPY --chown=default-user:worker_group ./src /worker/src
+COPY --chown=default-user:worker_group ./worker.py /worker
+COPY --chown=default-user:worker_group ./requirements.txt /worker
 
 USER default-user
 
@@ -30,8 +30,8 @@ RUN pip3 install --no-cache-dir --user -r requirements.txt
 
 ENV PATH="/home/default-user/.local/bin:${PATH}"
 
-EXPOSE 5000
+EXPOSE 3080
 
-CMD ["python", "app.py"]
+CMD ["python", "worker.py"]
 
 

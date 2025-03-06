@@ -1,0 +1,18 @@
+params: ["name", "email", "message"]
+body:
+  title: "Welcome"
+  language: "en"
+  welcome: "Welcome to LEMA Labs."
+  logo: "https://cdn-icons-png.flaticon.com/512/575/575927.png"
+  company: "LEMA Labs"
+  regarding: "Best Regards"
+  text_1: "Thank you for joining us. We're excited to have you on board!"
+  text_2: "Please, confirm  your subscription by clicking on the link below."
+  text_3: "If you have any questions, feel free to reach out to our support team."
+  subscription_url: "https://www.example.com/confirm-subscription"
+  subscription_text: "Confirm Subscription"
+  footer_url_1: "https://www.example.com/terms-of-service"
+  footer_text_1: "Terms of Service"
+  footer_url_2: "https://www.example.com/privacy-policy"
+  footer_text_2: "Privacy Policy"
+  rights: "All rights reserved."

@@ -2,20 +2,38 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Create venv Unix",
+      "label": "Deploy Docker RabbitMQ",
       "type": "shell",
-      "command": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt --quiet",
-      "windows": {
-        "command": "echo 'This task is for Unix systems only'"
-      }
+      "command": "docker compose up rabbitmq -d",
+      "group": "build",
+      "problemMatcher": []
     },
     {
-      "label": "Create venv Windows",
+      "label": "Create Virtual Environment",
       "type": "shell",
-      "command": "python -m venv .venv && .\\venv\\Scripts\\activate && pip install -r requirements.txt --quiet",
+      "command": "python3 -m venv .venv",
+      "group": "build",
+      "problemMatcher": [],
+      "dependsOn": "Deploy Docker RabbitMQ",
+    },
+    {
+      "label": "Activate Virtual Environment",
+      "type": "shell",
+      "command": "source .venv/bin/activate",
       "windows": {
-        "command": "python -m venv .venv; .\\venv\\Scripts\\activate; pip install -r requirements.txt  --quiet"
-      }
-    }
+        "command": ".venv\\Scripts\\activate"
+      },
+      "dependsOn": "Create Virtual Environment",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Requirements",
+      "type": "shell",
+      "command": ".venv/bin/pip install -r requirements.txt",
+      "group": "build",
+      "dependsOn": "Activate Virtual Environment",
+      "problemMatcher": []
+    },
   ]
 }

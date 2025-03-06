@@ -1,7 +1,9 @@
 {
 
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "FIXED"],
-  "python.terminal.activateEnvironment": false,
+  "python.terminal.activateEnvironment": true,
+   "python.pipenvPath": "${workspaceFolder}/.venv",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.languageServer": "Pylance",
   "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingImports": "none",
@@ -12,7 +14,7 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.venv": true,
+    "**/.venv": false,
     "**/.DS_Store": true,
     "**/*.pyc": {
       "when": "$(basename).py"
@@ -40,6 +42,18 @@
     }
   },
   "cSpell.words": [
-    
+    "autopep",
+    "buildx",
+    "dotenv",
+    "gmail",
+    "healthcheck",
+    "iputils",
+    "noninteractive",
+    "pydantic",
+    "PYTHONIOENCODING",
+    "PYTHONUNBUFFERED",
+    "pyyaml",
+    "rabbitmq",
+    "ufpb"
   ]
 }

@@ -16,3 +16,4 @@ docker-compose.yaml
 .env
 Dockerfile
 .git
+.env.secrets*

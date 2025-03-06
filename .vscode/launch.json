@@ -2,25 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: App (Unix)",
+            "name": "Python: Worker",
             "type": "debugpy",
             "request": "launch",
-            "program": "app.py",
+            "program": "worker.py",
             "console": "integratedTerminal",
-            "python": "${workspaceFolder}/.venv/bin/python",
-            "justMyCode": true,
-            "preLaunchTask": "Create venv Unix"
-        },
-        {
-            "name": "Python: App (Windows)", 
-            "type": "debugpy",
-            "request": "launch",
-            "program": "app.py",
-            "console": "integratedTerminal",
-            "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
-            "justMyCode": true,
-            "preLaunchTask": "Create venv Windows"
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/.venv/bin"
+            },
+            "preLaunchTask": "Install Requirements"
         }
     ]
-  }
-  
+}

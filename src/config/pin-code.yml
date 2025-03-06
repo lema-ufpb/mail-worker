@@ -1,0 +1,16 @@
+params: ["pin", "email"]
+body:
+  title: "Your pin code is"
+  language: "en"
+  welcome: "Welcome to LEMA Labs. Here is your pin code"
+  logo: "https://cdn-icons-png.flaticon.com/512/575/575927.png"
+  company: "LEMA Labs"
+  regarding: "Best Regards"
+  text_1: "Please use this code to access the platform."
+  text_2: "If you have any questions or need assistance, please don't hesitate to contact us."
+  footer_url_1: "https://www.example.com/terms-of-service"
+  footer_text_1: "Terms of Service"
+  footer_url_2: "https://www.example.com/privacy-policy"
+  footer_text_2: "Privacy Policy"
+  rights: "All rights reserved."
+
