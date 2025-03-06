@@ -77,5 +77,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 👏 Acknowledgments
 
-- [Hilton Almeida](https://github.com/hiltonmbr)
+- [Hilton Ramalho](https://github.com/hiltonmbr)
 - [Aléssio Almeida](https://github.com/alessioalmeida)
